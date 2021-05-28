@@ -1,0 +1,37 @@
+@import '../../variables'
+.column
+    width: 248px 
+    max-height: 100% 
+    height: auto   
+    padding: 12px
+    border-radius: 3px
+    background-color: $background
+    position: relative
+    display: flex
+    flex-direction: column
+    &__wrapper
+        display: grid
+        grid-template-rows: 1fr
+        // grid-gap: 8px
+        margin-top: 12px   
+        .card
+            margin-bottom: 8px     
+    &__list 
+        overflow-x: hidden
+        overflow-y: scroll        
+        &::-webkit-scrollbar
+            width: 0px
+    &__addbtn
+        flex: 1 1 auto
+        width: 248px
+    &__delete
+        display: none
+        position: absolute
+        top: 15px
+        right: 12px
+    &__header
+        flex: 0 0 auto
+        max-width: 100%
+        overflow-wrap: anywhere
+    &:hover &__delete
+        display: block            
