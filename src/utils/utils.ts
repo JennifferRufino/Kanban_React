@@ -14,7 +14,7 @@ export const reorderCard = (
 				const [removed] = temp.splice(source.index, 1);
 				temp.splice(destination.index, 0, removed);
 
-				return { id: item.id, title: item.title, cards: temp };
+				return { id: item.id, title: item.title, color: item.color, cards: temp };
 			}
 
 			return item;
@@ -33,6 +33,7 @@ export const moveCard = (
 			column.cards.forEach((card, index) => (index === source.index ? sourceCard.push(card) : ''));
 			return {
 				title: column.title,
+				color: column.color,
 				id: column.id,
 				cards: column.cards.filter((_, index) => index !== source.index),
 			};

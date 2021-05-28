@@ -24,7 +24,7 @@ const AddNewItem: React.FC<AddNewItemProps> = (props) => {
 		event && event.preventDefault();
 		if (text !== '') {
 			if (variant === 'column') {
-				onAddColumn!({ title: text, id: Date.now().toString(), cards: [] });
+				onAddColumn!({ title: text, color: text, id: Date.now().toString(), cards: [] });
 				setText('');
 			} else {
 				onAddCard!({ title: text, id: Date.now().toString(), parrentId: parrentId! });
@@ -35,8 +35,8 @@ const AddNewItem: React.FC<AddNewItemProps> = (props) => {
 
 	const onChangeText = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setText(e.target.value), []);
 
-	const placeholder: string = `Введите название ${variant === 'column' ? 'колонки' : 'карточки'}`;
-	const textButton: string = `Добавить ${variant === 'column' ? 'колонку' : 'карточку'}`;
+	const placeholder: string = `Adicionar outro ${variant === 'column' ? 'lista' : 'cartão'}`;
+	const textButton: string = `Adicionar ${variant === 'column' ? 'lista' : 'cartão'}`;
 
 	return (
 		<div className='add-item'>

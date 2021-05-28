@@ -1,5 +1,6 @@
 export interface IColumn {
     title: string
+    color: string
     id: string
     cards: Array<ICard>
 }
