@@ -36,7 +36,7 @@ const initialState: IBoard = {
 			],
 		},
 		{
-			title: 'In Progress',
+			title: '💻  In Progress',
 			color: "#945AD1",
 			id: '1589896361180',
 			cards: [
@@ -49,7 +49,7 @@ const initialState: IBoard = {
 			],
 		},
 		{
-			title: 'Done',
+			title: '🚀  Done',
 			color: "#59D090",
 			id: '1589896366935',
 			cards: [
