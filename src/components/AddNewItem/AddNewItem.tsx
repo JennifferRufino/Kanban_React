@@ -30,6 +30,7 @@ const AddNewItem: React.FC<AddNewItemProps> = (props) => {
 			} else {
 				onAddCard!({ title: text, tag: text2, id: Date.now().toString(), parrentId: parrentId! });
 				setText('');
+				setText2('');
 			}
 		}
 	};
