@@ -5,62 +5,70 @@ import { reorderCard, moveCard } from '../../utils/utils';
 const initialState: IBoard = {
 	columns: [
 		{
-			title: 'To Do',
+			title: '📝  To Do',
 			color: "#5CC4FF",
 			id: '1589896356832',
 			cards: [
 				{
 					title: 'Documentar padrões mobile',
+					tag: 'Tag1',
 					id: '1589896374502',
 					parrentId: '1589896356832',
 				},
 				{
 					title: 'Ajustes fluxo de compra',
 					id: '1589896378294',
+					tag: 'Tag1',
 					parrentId: '1589896356832',
 				},
 				{
 					title: 'Banners da home',
 					id: '1589896384638',
+					tag: 'Tag1',
 					parrentId: '1589896356832',
 				},
 				{
 					title: 'Template de e-mail marketing',
 					id: '1589896390118',
+					tag: 'Tag1',
 					parrentId: '1589896356832',
 				},
 			],
 		},
 		{
 			title: 'In Progress',
-			color: "#5CC4FF",
+			color: "#945AD1",
 			id: '1589896361180',
 			cards: [
 				{
 					title: 'Wireframe das telas',
-					id: '1589896427925',
-					parrentId: '1589896361180',
+					tag: 'Tag2',
+					id: '1589896427935',
+					parrentId: '1589896361181',
 				},
 			],
 		},
 		{
 			title: 'Done',
-			color: "#5CC4FF",
+			color: "#59D090",
 			id: '1589896366935',
 			cards: [
 				{
 					title: 'Implementação do blog',
 					id: '1589896427925',
+					tag: 'Tag3',
 					parrentId: '1589896361180',
 				},
 				{
 					title: 'Análise de métricas',
-					id: '1589896427925',
+					id: '1589896427945',
+					tag: 'Tag3',
 					parrentId: '1589896361180',
 				},
 				{
 					title: 'Wireframe das telas',
-					id: '1589896427925',
+					id: '1589896427955',
+					tag: 'Tag3',
 					parrentId: '1589896361180',
 				},
 			],

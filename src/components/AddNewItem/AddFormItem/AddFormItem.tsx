@@ -4,16 +4,19 @@ import ResizeTextarea from '../../ResizeTextarea/ResizeTextarea';
 
 interface AddFormItemProps {
 	placeholder: string;
+	placeholder2: string;
 	textButton: string;
 	variant: string;	
 	text: string;	
+	text2: string;
 	handelSubmit: () => void;
 	onChangeText: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+	onChangeText2: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 	showHandler: () => void;
 }
 
 const AddFormItem = (props: AddFormItemProps) => {
-	const {text, placeholder, textButton, variant, handelSubmit, onChangeText, showHandler} = props;
+	const {text, text2, placeholder, placeholder2, textButton, variant, handelSubmit, onChangeText,onChangeText2, showHandler} = props;
 	
 
 	const onEnterPress = (e: React.KeyboardEvent) => {
@@ -37,12 +40,20 @@ const AddFormItem = (props: AddFormItemProps) => {
 							autoFocus
 						/>
 					) : (
-						<ResizeTextarea 
-						value={text}					
-						onChange={onChangeText}
-						onKeyDown={onEnterPress}						
-						placeholder={placeholder}
-						/>						
+						<>
+							<ResizeTextarea 
+								value={text}					
+								onChange={onChangeText}
+								onKeyDown={onEnterPress}						
+								placeholder={placeholder}
+							/>
+							<ResizeTextarea 
+								value={text2}					
+								onChange={onChangeText2}
+								onKeyDown={onEnterPress}						
+								placeholder={placeholder2}
+							/>	
+						</>					
 					)}
 					<div className='add-item__btn'>
 						<Button type='submit'>{textButton} </Button>

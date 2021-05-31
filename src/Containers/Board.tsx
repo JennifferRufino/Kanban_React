@@ -62,7 +62,7 @@ const Board = (props: Props) => {
 					<Droppable key={column.id} droppableId={column.id}>
 						{(provided, snapshot) => (
 							<div ref={provided.innerRef} className='content' key={column.id}>
-								<Column>
+								<Column column={column}>
 									<h2 className='column__header'>{column.title}</h2>
 									<div onClick={e => onDeleteColumn(e, +column.id)} className='icon-close column__delete'></div>
 									<div className='column__list'>
@@ -70,7 +70,7 @@ const Board = (props: Props) => {
 											{column.cards.map((item, index) => (
 												<Draggable key={item.id} draggableId={item.id} index={index}>
 													{(provided, snapshot) => (
-														<Card
+														<Card 
 															className={`${snapshot.isDragging ? ' card-draggbel' : ''}`}
 															innerRef={provided.innerRef}
 															{...provided.draggableProps}
@@ -78,6 +78,7 @@ const Board = (props: Props) => {
 															key={item.id}
 															id={+item.id}
 															title={item.title}
+															tag ={item.tag}
 															onDeleteCard={deleteCard}
 															style={getStyle(provided.draggableProps.style!, snapshot)}
 														/>

@@ -8,6 +8,7 @@ export interface IColumn {
 export interface ICard {
     parrentId: string
     id: string
+    tag: string
     title: string
 }
 

@@ -14,6 +14,7 @@ const AddNewItem: React.FC<AddNewItemProps> = (props) => {
 	const { variant, onAddCard, onAddColumn, parrentId }: AddNewItemProps = props;
 	const [show, setShow] = useState<boolean>(false);
 	const [text, setText] = useState<string>('');
+	const [text2, setText2] = useState<string>('');
 
 	const showHandler = () => {
 		setShow(!show);
@@ -27,15 +28,17 @@ const AddNewItem: React.FC<AddNewItemProps> = (props) => {
 				onAddColumn!({ title: text, color: text, id: Date.now().toString(), cards: [] });
 				setText('');
 			} else {
-				onAddCard!({ title: text, id: Date.now().toString(), parrentId: parrentId! });
+				onAddCard!({ title: text, tag: text2, id: Date.now().toString(), parrentId: parrentId! });
 				setText('');
 			}
 		}
 	};
 
 	const onChangeText = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setText(e.target.value), []);
+	const onChangeText2 = useCallback((e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setText2(e.target.value), []);
 
-	const placeholder: string = `Adicionar outro ${variant === 'column' ? 'lista' : 'cartão'}`;
+	const placeholder: string = `Adicionar ${variant === 'column' ? 'outra lista' : 'outro cartão'}`;
+	const placeholder2: string = "Adicionar Tag";
 	const textButton: string = `Adicionar ${variant === 'column' ? 'lista' : 'cartão'}`;
 
 	return (
@@ -48,9 +51,12 @@ const AddNewItem: React.FC<AddNewItemProps> = (props) => {
 			) : (
 				<AddFormItem
 					text={text}
+					text2 = {text2}
 					onChangeText={onChangeText}
+					onChangeText2={onChangeText2}
 					showHandler={showHandler}
 					placeholder={placeholder}
+					placeholder2 = {placeholder2}
 					textButton={textButton}
 					variant={variant}
 					handelSubmit={handelSubmit}
