@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '../../Button/Button';
-import ResizeTextarea from '../../ResizeTextarea';
+import ResizeTextarea from '../../ResizeTextarea/ResizeTextarea';
 
 interface AddFormItemProps {
 	placeholder: string;
