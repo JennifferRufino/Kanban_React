@@ -27,10 +27,12 @@ const AddNewItem: React.FC<AddNewItemProps> = (props) => {
 			if (variant === 'column') {
 				onAddColumn!({ title: text, color: text, id: Date.now().toString(), cards: [] });
 				setText('');
+				setShow(false);
 			} else {
 				onAddCard!({ title: text, tag: text2, id: Date.now().toString(), parrentId: parrentId! });
 				setText('');
 				setText2('');
+				setShow(false);
 			}
 		}
 	};
